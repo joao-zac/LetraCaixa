@@ -7,11 +7,11 @@ public class Filme {
     private String diretor;
     private String genero;
     private String sinopse;
-    private byte[] poster;
+    private String poster;
 
     public Filme() {}
 
-    public Filme(int id_filme, String titulo, int ano_lancamento, String diretor, String genero, String sinopse, byte[] poster) {
+    public Filme(int id_filme, String titulo, int ano_lancamento, String diretor, String genero, String sinopse, String poster) {
         this.id_filme = id_filme;
         this.titulo = titulo;
         this.ano_lancamento = ano_lancamento;
@@ -69,11 +69,11 @@ public class Filme {
             this.sinopse = sinopse;
         }
 
-    public byte[] getPoster() {
+    public String getPoster() {
         return poster;
     }
 
-    public void setPoster(byte [] poster) {
+    public void setPoster(String poster) {
         this.poster = poster;
     }
 

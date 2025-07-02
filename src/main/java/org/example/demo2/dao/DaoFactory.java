@@ -11,4 +11,12 @@ public class DaoFactory {
         return new UsuarioDAOImpl(ConnectionFactory.getConnection());
     }
 
+    public static FilmeFavoritoDao createFilmeFavoritoDAO() {
+        return new FilmeFavoritoDAOImpl(ConnectionFactory.getConnection());
+    }
+
+    public static LogFilmeDAO createLogFilmeDAO() {
+        return new LogFilmeDAOImp(ConnectionFactory.getConnection());
+    }
+
 }

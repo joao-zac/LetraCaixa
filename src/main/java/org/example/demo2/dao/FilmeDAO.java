@@ -7,14 +7,11 @@ import java.util.List;
 
 
 public interface FilmeDAO {
-        // void adicionarFilme(Filme filme);
         Filme buscarFilmePorId(int id);
         List<Filme> listarTodosFilmes();
-        // void atualizarFilme(Filme filme);
-        // void deletarFilme(int id);
         List<Filme> buscarFilmesPorTitulo(String titulo);
         List<Filme> buscarFilmesPorDiretor(String diretor);
-    
+
 }
 
 

@@ -41,7 +41,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <image>
-            <Image url="@../../../assets/posters/download.jpeg" />
+            <Image url="@../../../assets/posters/poderosochefao.jpeg" />
          </image>
          <viewport>
             <Rectangle2D />
@@ -71,7 +71,7 @@
       <ComboBox fx:id="cmbxUsuarios" layoutX="437.0" layoutY="42.0" prefWidth="150.0" />
       <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="38.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../assets/posters/download.jpeg" />
+            <Image url="@../../../assets/posters/poderosochefao.jpeg" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="166.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
