@@ -9,11 +9,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Log.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-//        stage.setTitle("Hello!");
+
+        Parent tela =  FXMLLoader.load(getClass().getResource("Log.fxml"));
+        Scene scene = new Scene(tela);
+
         stage.setScene(scene);
         stage.show();
     }

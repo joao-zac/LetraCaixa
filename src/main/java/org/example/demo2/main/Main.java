@@ -1,10 +1,10 @@
-package org.example.demo2.main;
-
-import java.sql.SQLException;
-import java.util.List;
-
-public class Main {
-    public static void main(String[] args) {
+//package org.example.demo2.main;
+//
+//import java.sql.SQLException;
+//import java.util.List;
+//
+//public class Main {
+//    public static void main(String[] args) {
 
         // UsuarioDAO usuarioDAO = DaoFactory.createUsuarioDAO();
         // Usuario usuario = new Usuario();
@@ -52,5 +52,5 @@ public class Main {
         //     System.out.println("Filme com ID " + idParaBuscar + " não encontrado.");
         // }
         
-    }
-}
+//    }
+//}

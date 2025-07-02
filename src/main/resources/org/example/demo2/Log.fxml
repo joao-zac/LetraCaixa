@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.Log">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.controllers.LogController">
    <children>
       <TextArea layoutX="236.0" layoutY="100.0" prefHeight="200.0" prefWidth="306.0" promptText="Add a Review" />
       <ImageView fitHeight="230.0" fitWidth="140.0" layoutX="31.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
