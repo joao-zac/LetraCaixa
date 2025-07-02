@@ -5,11 +5,11 @@ import org.example.demo2.util.ConnectionFactory;
 
 import java.sql.*;
 
-public class UsuarioDAOController implements UsuarioDAO {
+public class UsuarioDAOImpl implements UsuarioDAO {
 
     private Connection conn;
 
-    public UsuarioDAOController(Connection conn) {
+    public UsuarioDAOImpl(Connection conn) {
         this.conn = conn;
     }
 

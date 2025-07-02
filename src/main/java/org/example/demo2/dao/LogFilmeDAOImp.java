@@ -7,11 +7,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogFilmeDAOController implements LogFilmeDAO {
+public class LogFilmeDAOImp implements LogFilmeDAO {
 
     private Connection conn;
 
-    public LogFilmeDAOController(Connection conn) {
+    public LogFilmeDAOImp(Connection conn) {
         this.conn = conn;
     }
 

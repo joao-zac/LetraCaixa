@@ -7,10 +7,10 @@ import java.util.List;
 import org.example.demo2.util.ConnectionFactory;
 
 
-public class FilmeFavoritoDAOController implements FilmeFavoritoDao {
+public class FilmeFavoritoDAOImpl implements FilmeFavoritoDao {
     private Connection conn;
 
-    public FilmeFavoritoDAOController(Connection conn) {
+    public FilmeFavoritoDAOImpl(Connection conn) {
         this.conn = conn;
     }
 

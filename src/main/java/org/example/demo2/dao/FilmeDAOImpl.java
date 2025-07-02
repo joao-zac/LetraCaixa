@@ -9,11 +9,11 @@ import java.util.List;
 
 
 
-public class FilmeDAOController implements FilmeDAO {
+public class FilmeDAOImpl implements FilmeDAO {
 
     private Connection conn;
 
-    public FilmeDAOController(Connection conn) {
+    public FilmeDAOImpl(Connection conn) {
         this.conn = conn;
     }
 

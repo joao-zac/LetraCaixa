@@ -4,11 +4,11 @@ import org.example.demo2.util.ConnectionFactory;
 
 public class DaoFactory {
     public static FilmeDAO createFilmeDAO() {
-        return new FilmeDAOController(ConnectionFactory.getConnection());
+        return new FilmeDAOImpl(ConnectionFactory.getConnection());
     }
 
     public static UsuarioDAO createUsuarioDAO() {
-        return new UsuarioDAOController(ConnectionFactory.getConnection());
+        return new UsuarioDAOImpl(ConnectionFactory.getConnection());
     }
 
 }
