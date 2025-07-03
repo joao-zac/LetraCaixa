@@ -105,6 +105,42 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
     }
 
     @Override
+    public List<LogFilme> listarLogsPorUsuario(int idUsuario) {
+        String sql = "SELECT id_log, id_usuario, id_filme, data_assistido, nota, review FROM log_filme WHERE id_usuario = ? ORDER BY data_assistido DESC";
+
+//        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        List<LogFilme> logs = new ArrayList<>();
+
+        try {
+
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, idUsuario);
+
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                LogFilme log = new LogFilme();
+                log.setIdLog(rs.getInt("id_log"));
+                log.setIdUsuario(rs.getInt("id_usuario"));
+                log.setIdFilme(rs.getInt("id_filme"));
+                log.setDataAssistido(rs.getDate("data_assistido").toLocalDate());
+                log.setNota(rs.getBigDecimal("nota"));
+                log.setDescricao(rs.getString("review"));
+                logs.add(log);                      // Adiciona o log à lista
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionFactory.closeStatement(stmt);
+            ConnectionFactory.closeResultSet(rs);
+        }
+
+        return logs;
+    }
+
+    @Override
     public void atualizarLog(LogFilme logFilme) {
         PreparedStatement st = null;
 

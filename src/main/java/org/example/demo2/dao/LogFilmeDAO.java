@@ -8,6 +8,7 @@ public interface LogFilmeDAO {
     void adicionarLogFilme(LogFilme logFilme);
     LogFilme buscarLogPorId(int id);
     List<LogFilme> listarTodosLogs();
+    List<LogFilme> listarLogsPorUsuario(int idUsuario);
     void atualizarLog(LogFilme logFilme);
     void deletarLog(int id);
 }

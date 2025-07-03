@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="510.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.controllers.Profile">
    <children>
       <ImageView fx:id="imgPerfil" fitHeight="186.0" fitWidth="183.0" layoutX="28.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="labelNomeUsuario" alignment="TOP_LEFT" layoutX="300.0" layoutY="32.0" prefHeight="91.0" prefWidth="341.0">
+      <Label fx:id="labelNomeUsuario" alignment="TOP_LEFT" layoutX="235.0" layoutY="32.0" prefHeight="91.0" prefWidth="406.0">
          <font>
             <Font name="Comic Sans MS" size="31.0" />
          </font>
@@ -34,13 +34,13 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ComboBox fx:id="cmbxFilmes" layoutX="403.0" layoutY="32.0" onAction="#onCmbClicked" prefHeight="91.0" prefWidth="238.0" promptText="+ loggar um filme" style="-fx-background-color: #C9C9;" />
+      <ComboBox fx:id="cmbxFilmes" layoutX="403.0" layoutY="142.0" onAction="#onCmbClicked" prefHeight="91.0" prefWidth="238.0" promptText="+ loggar um filme" style="-fx-background-color: #C9C9;" />
       <Button layoutX="28.0" layoutY="400.0" mnemonicParsing="false" onAction="#onBtnUpdate" prefHeight="75.0" prefWidth="226.0" style="-fx-background-color: #C9F3C9;" text="mudar minhas coisa" textFill="#04ff00">
          <font>
             <Font name="Comic Sans MS" size="21.0" />
          </font>
       </Button>
-      <Button fx:id="btnReview" layoutX="359.0" layoutY="147.0" mnemonicParsing="false" onAction="#onBtnReviewClicked" prefHeight="40.0" prefWidth="282.0" style="-fx-background-color: #F2D2F2D2;" text="Dar uma opinião desnecessária" textFill="RED">
+      <Button fx:id="btnReview" layoutX="359.0" layoutY="255.0" mnemonicParsing="false" onAction="#onBtnReviewClicked" prefHeight="40.0" prefWidth="282.0" style="-fx-background-color: #F2D2F2D2;" text="Dar uma opinião desnecessária" textFill="RED">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>

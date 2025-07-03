@@ -2,10 +2,12 @@ package org.example.demo2.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -17,6 +19,7 @@ import org.example.demo2.HelloApplication;
 import org.example.demo2.dao.DaoFactory;
 import org.example.demo2.model.Filme;
 import org.example.demo2.model.Usuario;
+import org.example.demo2.util.Alertas;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -64,10 +67,6 @@ public class Profile {
         btnReview.setDisable(true);
     }
 
-    @FXML
-    public void onCmbClicked() {
-        System.out.println("oi");
-    }
 
     @FXML
     public void onBtnReviewClicked() {
@@ -112,6 +111,26 @@ public class Profile {
 
     }
 
+    @FXML
+    public void onBtnVerLogs(ActionEvent event) {
+        if (usuarioSelecionado == null) {
+            Alertas.mostraAlerta(null, "Erro", "Nenhum usuário carregado para ver os logs.", Alert.AlertType.WARNING);
+            return;
+        } else {
+            try {
+                Stage currentStage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+                FXMLLoader loader = HelloApplication.ScreenManager.criarTelaNaMesmaJanela(currentStage, "UpdateLog.fxml");
+                UpdateLog destinoController = loader.getController();
+                destinoController.setUsuario(usuarioSelecionado);
+
+            } catch (IOException e) {
+                System.err.println("Erro ao carregar a tela de logs do usuário: " + e.getMessage());
+                e.printStackTrace();
+                Alertas.mostraAlerta(null, "Erro de Carregamento", "Falha ao carregar tela de logs do usuário.", Alert.AlertType.ERROR);
+            }
+        }
+    }
+
     public void setUsuario(Usuario usuario) {
         this.usuarioSelecionado = usuario;
         if (usuarioSelecionado != null) {
@@ -122,4 +141,6 @@ public class Profile {
         }
     }
 
+    public void onCmbClicked(ActionEvent actionEvent) {
+    }
 }

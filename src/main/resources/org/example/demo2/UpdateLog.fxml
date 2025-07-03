@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.controllers.UpdateLog">
+   <children>
+      <ComboBox fx:id="cmbxLogsDoUsuario" layoutX="33.0" layoutY="36.0" prefWidth="150.0" />
+      <TextArea fx:id="txtReview" layoutX="386.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="btnAtualizar" layoutX="33.0" layoutY="312.0" mnemonicParsing="false" onAction="#onBtnAtualizar" prefHeight="50.0" prefWidth="127.0" style="-fx-background-color: #90EE90;" text="Atualizar">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Button>
+      <Slider fx:id="sliderNota" blockIncrement="0.0" layoutX="419.0" layoutY="321.0" majorTickUnit="1.0" max="5.0" minorTickCount="1" showTickLabels="true" snapToTicks="true" />
+      <Label fx:id="lblNota" layoutX="460.0" layoutY="354.0" prefHeight="32.0" prefWidth="59.0" text="Nota">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblFilmeDoLog" layoutX="33.0" layoutY="90.0" prefHeight="32.0" prefWidth="150.0" text="Label">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datepickerDataLog" layoutX="386.0" layoutY="36.0" prefHeight="25.0" prefWidth="200.0" />
+      <ImageView fx:id="imgPoster" fitHeight="150.0" fitWidth="127.0" layoutX="33.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="183.0" layoutY="313.0" mnemonicParsing="false" onAction="#onBtnExcluir" prefHeight="50.0" prefWidth="127.0" style="-fx-background-color: #FF746C;" text="Excluir">
+         <font>
+            <Font name="Comic Sans MS" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
