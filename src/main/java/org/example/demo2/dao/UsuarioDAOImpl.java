@@ -36,7 +36,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     
     }
@@ -62,7 +63,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
 
         return usuario;
@@ -81,7 +83,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 
@@ -96,7 +98,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 
@@ -115,13 +117,15 @@ public class UsuarioDAOImpl implements UsuarioDAO {
                 usuario.setIdUsuario(rs.getInt("id_usuario"));
                 usuario.setNome(rs.getString("nome"));
                 usuario.setFotoPerfil(rs.getBytes("foto"));
+                usuarios.add(usuario);
             }
             return usuarios;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 

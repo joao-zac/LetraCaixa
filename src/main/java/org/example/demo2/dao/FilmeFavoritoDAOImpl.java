@@ -27,7 +27,7 @@ public class FilmeFavoritoDAOImpl implements FilmeFavoritoDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 
@@ -42,7 +42,7 @@ public class FilmeFavoritoDAOImpl implements FilmeFavoritoDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 
@@ -60,7 +60,8 @@ public class FilmeFavoritoDAOImpl implements FilmeFavoritoDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -81,7 +82,8 @@ public class FilmeFavoritoDAOImpl implements FilmeFavoritoDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 }

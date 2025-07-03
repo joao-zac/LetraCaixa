@@ -21,11 +21,13 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         ResultSet rs = null;
 
         try {
-            st = conn.prepareStatement("INSERT INTO log_filme (id_filme, data_assistido, nota, review) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            st = conn.prepareStatement("INSERT INTO log_filme (id_filme, data_assistido, nota, review, id_log, id_usuario) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, logFilme.getIdFilme());
             st.setDate(2, Date.valueOf(logFilme.getDataAssistido()));
             st.setBigDecimal(3, logFilme.getNota());
             st.setString(4, logFilme.getDescricao());
+            st.setInt(5, logFilme.getIdLog());
+            st.setInt(6, logFilme.getIdUsuario());
             int linhas = st.executeUpdate();
             if (linhas > 0) {
                 rs = st.getGeneratedKeys();
@@ -38,7 +40,8 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -56,6 +59,7 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
             if (rs.next()) {
                 logFilme.setIdLog(rs.getInt("id_log"));
                 logFilme.setIdFilme(rs.getInt("id_filme"));
+                logFilme.setIdUsuario(rs.getInt("id_usuario"));
                 logFilme.setDataAssistido(rs.getDate("data_assistido").toLocalDate());
                 logFilme.setNota(rs.getBigDecimal("nota"));
                 logFilme.setDescricao(rs.getString("review"));
@@ -65,7 +69,8 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -83,6 +88,7 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
                 LogFilme logFilme = new LogFilme();
                 logFilme.setIdLog(rs.getInt("id_log"));
                 logFilme.setIdFilme(rs.getInt("id_filme"));
+                logFilme.setIdUsuario(rs.getInt("id_usuario"));
                 logFilme.setDataAssistido(rs.getDate("data_assistido").toLocalDate());
                 logFilme.setNota(rs.getBigDecimal("nota"));
                 logFilme.setDescricao(rs.getString("review"));
@@ -93,7 +99,8 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -102,18 +109,17 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         PreparedStatement st = null;
 
         try {
-            st = conn.prepareStatement("UPDATE log_filme SET id_filme = ?, data_assistido = ?, nota = ?, review = ? WHERE id_log = ?");
-            st.setInt(1, logFilme.getIdFilme());
-            st.setDate(2, Date.valueOf(logFilme.getDataAssistido()));
-            st.setBigDecimal(3, logFilme.getNota());
-            st.setString(4, logFilme.getDescricao());
-            st.setInt(5, logFilme.getIdLog());
+            st = conn.prepareStatement("UPDATE log_filme SET data_assistido = ?, nota = ?, review = ? WHERE id_log = ?");
+            st.setDate(1, Date.valueOf(logFilme.getDataAssistido()));
+            st.setBigDecimal(2, logFilme.getNota());
+            st.setString(3, logFilme.getDescricao());
+            st.setInt(4, logFilme.getIdLog());
             st.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 
@@ -129,7 +135,7 @@ public class LogFilmeDAOImp implements LogFilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
         }
     }
 

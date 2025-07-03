@@ -5,7 +5,8 @@ import java.math.BigDecimal;
 
 public class LogFilme {
     private int idLog;
-    private int idFilme;   
+    private int idFilme;
+    private int idUsuario;
     private LocalDate dataAssistido; 
     private BigDecimal nota;
     private String descricao;
@@ -14,12 +15,21 @@ public class LogFilme {
         
     }
 
-    public LogFilme(int idLog, int idFilme, LocalDate dataAssistido, BigDecimal nota, String descricao) {
+    public LogFilme(int idLog, int idFilme, LocalDate dataAssistido, BigDecimal nota, String descricao, int idUsuario) {
         this.idLog = idLog;
         this.idFilme = idFilme;
+        this.idUsuario = idUsuario;
         this.dataAssistido = dataAssistido;
         this.nota = nota;
         this.descricao = descricao;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int id) {
+        this.idUsuario = id;
     }
 
     public int getIdLog() {

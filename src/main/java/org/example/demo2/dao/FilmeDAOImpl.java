@@ -43,7 +43,8 @@ public class FilmeDAOImpl implements FilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -73,7 +74,8 @@ public class FilmeDAOImpl implements FilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
 
     }
@@ -90,7 +92,7 @@ public class FilmeDAOImpl implements FilmeDAO {
             List<Filme> filmes = new ArrayList<>();
             while (rs.next()) {
                 Filme filme = new Filme();
-                filme.setIdFilme(rs.getInt("id"));
+                filme.setIdFilme(rs.getInt("id_filme"));
                 filme.setTitulo(rs.getString("titulo"));
                 filme.setGenero(rs.getString("genero"));
                 filme.setAnoLancamento(rs.getInt("ano_lancamento"));
@@ -104,7 +106,8 @@ public class FilmeDAOImpl implements FilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 
@@ -134,7 +137,8 @@ public class FilmeDAOImpl implements FilmeDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            ConnectionFactory.closeConnection();
+            ConnectionFactory.closeStatement(st);
+            ConnectionFactory.closeResultSet(rs);
         }
     }
 }
