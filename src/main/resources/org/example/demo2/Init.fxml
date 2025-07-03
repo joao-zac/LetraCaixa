@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="528.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.controllers.Init">
    <children>
-      <Label layoutX="14.0" layoutY="29.0" prefHeight="38.0" prefWidth="345.0" text="Bem vindo ao LetraCaixa 👍" underline="true">
+      <Label layoutX="14.0" layoutY="29.0" prefHeight="38.0" prefWidth="345.0" text="bem vindo ao LetraCaixa 👍" underline="true">
          <font>
             <Font name="Comic Sans MS" size="27.0" />
          </font>
@@ -36,7 +36,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ImageView fx:id="imgUserPic" fitHeight="83.0" fitWidth="88.0" layoutX="617.0" layoutY="42.0" pickOnBounds="true">
+      <ImageView fx:id="imgUserPic" fitHeight="183.0" fitWidth="191.0" layoutX="21.0" layoutY="136.0" pickOnBounds="true">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -47,42 +47,34 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fx:id="imgPoster" fitHeight="150.0" fitWidth="107.0" layoutX="38.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="15.0" layoutY="327.0" prefHeight="95.0" prefWidth="394.0" text="Nome User">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbxUsuarios" layoutX="560.0" layoutY="48.0" prefWidth="150.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="39.0" prefHeight="12.0" prefWidth="126.0" text="troque" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="418.0" layoutY="59.0" prefHeight="12.0" prefWidth="126.0" text="ou" textAlignment="CENTER" textFill="RED" />
+      <Button fx:id="btnAddUser" layoutX="448.0" layoutY="83.0" mnemonicParsing="false" onAction="#onBtnAddUserClick" text="Adicionar" textFill="#1908ff" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="481.0" layoutY="175.0">
          <image>
-            <Image url="@../../../assets/posters/download%20(1).jpeg" />
+            <Image url="@../../../assets/download.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="166.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/download%20(6).jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="300.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/download%20(4).jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="437.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/download%20(5).jpeg" />
-         </image>
-      </ImageView>
-      <Button fx:id="btnLogar" layoutX="640.0" layoutY="142.0" mnemonicParsing="false" text="+ Loggar" />
-      <ComboBox fx:id="cmbxUsuarios" layoutX="437.0" layoutY="42.0" prefWidth="150.0" />
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="38.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/poderosochefao.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="166.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/download%20(3).jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="107.0" layoutX="300.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../assets/posters/download%20(2).jpeg" />
-         </image>
-      </ImageView>
+      <Label layoutX="456.0" layoutY="404.0" text="um app para cinéfilos">
+         <font>
+            <Font name="Comic Sans MS" size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="544.0" layoutY="450.0" prefHeight="64.0" prefWidth="107.0" text="🤓☝">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+
    </children>
 </AnchorPane>

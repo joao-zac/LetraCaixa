@@ -4,6 +4,8 @@ import org.example.demo2.model.Usuario;
 import org.example.demo2.util.ConnectionFactory;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
 
@@ -98,6 +100,29 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         }
     }
 
-    
+    @Override
+    public List<Usuario> listarTodosUsuarios(){
+        PreparedStatement st = null;
+        ResultSet rs = null;
+
+        try{
+            st = conn.prepareStatement("select * from usuario");
+            rs = st.executeQuery();
+
+            List<Usuario> usuarios = new ArrayList<>();
+            while(rs.next()){
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(rs.getInt("id_usuario"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setFotoPerfil(rs.getBytes("foto"));
+            }
+            return usuarios;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionFactory.closeConnection();
+        }
+    }
 
 }
